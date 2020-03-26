@@ -6,19 +6,13 @@
       </div>
       <div class="text-cont">
         <div class="nome">
-          <p>
-            {{nome}}
-          </p>
+          <p>{{nome}}</p>
         </div>
         <div class="descricao">
-          <p>
-            {{descricao}}
-          </p>
+          <p>{{descricao}}</p>
         </div>
         <div class="data">
-          <p>
-            {{data}}
-          </p>
+          <p>{{data}}</p>
         </div>
       </div>
     </a>
@@ -35,7 +29,3 @@ export default {
   }
 };
 </script>
-
-
-<style>
-</style>
