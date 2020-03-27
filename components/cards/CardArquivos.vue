@@ -7,30 +7,19 @@
       <h2>Arquivos</h2>
       <div class="texto">
         <div class="text-space">
-          <div>
+          <div v-for="arquivo in listaArquivos" :key="arquivo.id">
             <a
               class="card-archive"
               target="_blank"
-              href="https://www.univates.br/bdu/bitstream/10737/365/1/Marcos%20Schorr.pdf"
+               v-bind:href="arquivo.link"
             >
               <div class="icone-archive">
                 <i class="fas fa-file-pdf"></i>
               </div>
-              <p>Marcos Schorr.pdf</p>
+              <p>{{arquivo.nome}}</p>
             </a>
           </div>
-          <div>
-            <a
-              class="card-archive"
-              target="_blank"
-              href="https://www.univates.br/bdu/bitstream/10737/365/1/Marcos%20Schorr.pdf"
-            >
-              <div class="icone-archive">
-                <i class="fas fa-file-pdf"></i>
-              </div>
-              <p>Marcos Schorr.pdf</p>
-            </a>
-          </div>
+
         </div>
       </div>
     </div>

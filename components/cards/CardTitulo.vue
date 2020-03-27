@@ -6,8 +6,7 @@
       </div>
       <h2>Título</h2>
       <div class="texto">
-        <p>Redução de setup através do sequenciamento de impressão de uma empresa de latas</p>
-        <!-- <p>{{titulo}}</p> -->
+        <p>{{titulo}}</p>
       </div>
     </div>
   </div>

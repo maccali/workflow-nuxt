@@ -2,6 +2,7 @@
   <div>
     <Header />
     <NavBar />
+
     <div class="container-fluid bg-um">
       <div class="container">
         <div class="row">
@@ -51,6 +52,7 @@
         </div>
       </div>
     </div>
+
     <Footer />
   </div>
 </template>
@@ -89,6 +91,36 @@ export default {
     CardLinksExternos,
     CardAvalie,
     CardCompartilhe
+  },
+  data() {
+    return {
+      titulo: "Como não saber como, sem ter comose souber como?",
+      resumo:
+        "Como não saber como, sem ter comose souber como? Como não saber como, sem ter comose souber como? Como não saber como, sem ter comose souber como Como não saber como, sem ter comose souber como?",
+      nota: 0,
+      listaArquivos: [
+        { id: 1, rede: "icone", nome: "Nome do Arquivo 1", link: "https://www.univates.br/bdu/bitstream/10737/365/1/Marcos%20Schorr.pdf" },
+        { id: 2, rede: "icone", nome: "Nome do Arquivo 1", link: "https://www.univates.br/bdu/bitstream/10737/365/1/Marcos%20Schorr.pdf" },
+        { id: 3, rede: "icone", nome: "Nome do Arquivo 1", link: "https://www.univates.br/bdu/bitstream/10737/365/1/Marcos%20Schorr.pdf" }
+      ],
+      listaChaves: ["Org", "Ajac", "Spe"],
+      listaAutores: ["Paulo Gosado", "Paulo Gosado", "Paulo Gosado"],
+      listaVersoes: [
+        { id: 1, versao: "1", data: "DATA d" },
+        { id: 2, versao: "2", data: "DATA d" },
+        { id: 3, versao: "3", data: "DATA d" }
+      ],
+      listaLinks: [
+        { id: 1, rede: "icone", link: "linke" },
+        { id: 2, rede: "icone", link: "linke" },
+        { id: 3, rede: "icone", link: "linke" }
+      ],
+      listaLinksCompartilhados: [
+        { id: 1, rede: "icone", link: "linke" },
+        { id: 2, rede: "icone", link: "linke" },
+        { id: 3, rede: "icone", link: "linke" }
+      ]
+    };
   }
 };
 </script>
