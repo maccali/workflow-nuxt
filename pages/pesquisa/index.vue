@@ -27,6 +27,7 @@
             </div>
           </div>
         </div>
+        <button v-on:click="atualizarMacy"></button>
       </div>
     </div>
     <Footer />
@@ -34,10 +35,11 @@
 </template>
 
 <script>
-import Header from "~/components/header/Header.vue";
-import NavBar from "~/components/navbar/NavBar.vue";
-import Footer from "~/components/footer/Footer.vue";
-import CardProjeto from "~/components/cards/CardProjeto.vue";
+import Header from "~/components/header/Header";
+import NavBar from "~/components/navbar/NavBar";
+import Footer from "~/components/footer/Footer";
+import CardProjeto from "~/components/cards/CardProjeto";
+
 
 export default {
   components: {
@@ -52,7 +54,8 @@ export default {
       dados: [
         {
           id: 1,
-          img: "https://abrilsuperinteressante.files.wordpress.com/2016/11/gatinhos-filhotes-reconhecem-a-voz-da-prc3b3pria-mc3a3e.jpg?quality=70&strip=info&w=1024",
+          img:
+            "https://abrilsuperinteressante.files.wordpress.com/2016/11/gatinhos-filhotes-reconhecem-a-voz-da-prc3b3pria-mc3a3e.jpg?quality=70&strip=info&w=1024",
           nome:
             " Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp",
           descricao:
@@ -61,7 +64,8 @@ export default {
         },
         {
           id: 2,
-          img: "https://t2.ea.ltmcdn.com/pt/images/3/9/6/img_meu_gatinho_chora_muito_e_normal_21693_600.jpg",
+          img:
+            "https://t2.ea.ltmcdn.com/pt/images/3/9/6/img_meu_gatinho_chora_muito_e_normal_21693_600.jpg",
           nome:
             " Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp",
           descricao:
@@ -70,7 +74,8 @@ export default {
         },
         {
           id: 3,
-          img: "https://i.pinimg.com/originals/8b/4e/88/8b4e8857a4f862cf1865a0f9de40de53.jpg",
+          img:
+            "https://i.pinimg.com/originals/8b/4e/88/8b4e8857a4f862cf1865a0f9de40de53.jpg",
           nome:
             " Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp",
           descricao:
@@ -79,7 +84,8 @@ export default {
         },
         {
           id: 4,
-          img: "https://image.cachorrogato.com.br/textimages/jogos-com-gatinhos.jpg",
+          img:
+            "https://image.cachorrogato.com.br/textimages/jogos-com-gatinhos.jpg",
           nome:
             " Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp",
           descricao:
@@ -88,7 +94,8 @@ export default {
         },
         {
           id: 5,
-          img: "https://1.bp.blogspot.com/-Wq2lcq9_a4I/Tc2lLWOkNVI/AAAAAAAABVM/Wao0rm-vWe4/s1600/gatinho-5755.jpg",
+          img:
+            "https://1.bp.blogspot.com/-Wq2lcq9_a4I/Tc2lLWOkNVI/AAAAAAAABVM/Wao0rm-vWe4/s1600/gatinho-5755.jpg",
           nome:
             " Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp Estatísticas sobre grupos de Whatsapp",
           descricao:
@@ -98,7 +105,20 @@ export default {
       ]
     };
   },
-  methods: {}
+  methods: {
+    atualizarMacy: () => {
+      // var macyProjetos = Macy({
+      //   container: '#macy-container-projetos',
+      //   trueOrder: false,
+      //   waitForImages: false,
+      //   margin: 24,
+      //   columns: 4,
+      //   breakAt: {
+      //     940: 1,
+      //   }
+      // });
+    }
+  }
 };
 </script>
 

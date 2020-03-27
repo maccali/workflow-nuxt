@@ -474,6 +474,34 @@ margin: 30px;
 .owl-carousel .owl-item img{
   object-fit: cover;
 }
+.sub-titulo{
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.img-box-pre{
+  display: flex;
+  justify-content: center;
+  height: 375px;
+}
+.img-box-pre img{
+  width: 100%;
+  object-fit: cover;
+}
+.text-box-pre{
+  display: flex;
+  height: 375px;
+  text-align: center;
+  align-items: center;
+  padding: 40px;
+  text-align: justify;
+  text-indent: 1.5em;
+}
+.text-box-pre p:first-letter{
+  font-weight: bolder;
+  font-size: 25px !important;
+}
 
 .card-edit-list{
     display: flex;

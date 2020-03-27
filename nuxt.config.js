@@ -26,8 +26,6 @@ export default {
     '@/assets/css/bootstrap-grid.css',
     '@/assets/css/bootstrap.css',
     '@/assets/css/bootstrap-reboot.css',
-
-
     '@/assets/css/custom.css',
   ],
   /*
@@ -35,7 +33,6 @@ export default {
   */
   plugins: [
     {src: '~/plugins/owl.js', mode: 'client'}, // Only works on client side
-    // {src: '~/plugins/macy.js', mode: 'client'}, // Only works on client side
     {src: '~/plugins/final.js', mode: 'client'} // Only works on client side
   ],
   /*
