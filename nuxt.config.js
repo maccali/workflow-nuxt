@@ -34,7 +34,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: 'plugins/owl.js', ssr: false} // Only works on client side
+    {src: '~/plugins/owl.js', mode: 'client'}, // Only works on client side
+    // {src: '~/plugins/macy.js', mode: 'client'}, // Only works on client side
+    {src: '~/plugins/final.js', mode: 'client'} // Only works on client side
   ],
   /*
   ** Nuxt.js dev-modules
