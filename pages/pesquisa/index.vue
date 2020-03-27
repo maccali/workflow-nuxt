@@ -40,7 +40,6 @@ import NavBar from "~/components/navbar/NavBar";
 import Footer from "~/components/footer/Footer";
 import CardProjeto from "~/components/cards/CardProjeto";
 
-
 export default {
   components: {
     Header,
@@ -104,6 +103,21 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    var macyProjetos = Macy({
+      container: '#macy-container-projetos',
+      trueOrder: false,
+      waitForImages: false,
+      margin: 24,
+      columns: 4,
+      breakAt: {
+        940: 1,
+      }
+    });
+    //
+    console.log('parametros')
+    console.log(this.$route.query )
   },
   methods: {
     atualizarMacy: () => {

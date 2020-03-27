@@ -3,9 +3,9 @@
     <div id="menu-dinamico" class="container-fluid bg-nav fixed-top">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#">
+          <nuxt-link class="navbar-brand" to="/">
             <img src="~/assets/img/logo.png" alt />
-          </a>
+          </nuxt-link>
           <div>
             <button
               class="btn btn-icon-menu principal"
@@ -55,16 +55,18 @@
                 />
 
                 <div class="btn-cont">
-                  <button
-                    type="submit"
-                    href="./resultadoPesquisa.html"
-                    class="btn btn-texto-menu"
-                  >Buscar</button>
+                  <nuxt-link to="/pesquisa">
+                    <button
+                      type="submit"
+                      href="./resultadoPesquisa.html"
+                      class="btn btn-texto-menu"
+                    >Buscar</button>
+                  </nuxt-link>
                 </div>
               </form>
             </div>
           </div>
-          <div >
+          <div>
             <div v-if="pageId === 'login'">
               <div class="menu-header">
                 <span class="aba-titulo">Entre</span>
@@ -130,7 +132,7 @@
               </form>
             </div>
           </div>
-          <div >
+          <div>
             <div v-if="pageId === 'cadastro'">
               <div class="menu-header">
                 <span class="aba-titulo">Cadastre-se</span>
@@ -244,7 +246,7 @@
               </div>
             </div>
           </div>
-          <div >
+          <div>
             <div v-if="pageId === 'usuario'">
               <div class="menu-header">
                 <span class="aba-titulo">Sua Conta</span>
@@ -259,39 +261,39 @@
               </div>
               <ul class="menu-lista-usuario">
                 <li>
-                  <a href="./meuPerfil.html">
+                  <nuxt-link to="/usuario/50/perfil">
                     <span>
                       <i class="fas fa-id-card"></i>
                     </span>Perfil
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="./meuDashboard.html">
+                  <nuxt-link to="/usuario/50/dashboard">
                     <span>
                       <i class="fas fa-tachometer-alt"></i>
                     </span>Dashboard
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="./meusProjetos.html">
+                  <nuxt-link to="/usuario/50/projetos">
                     <span>
                       <i class="fas fa-project-diagram"></i>
                     </span>Projetos
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="./meusFavoritos.html">
+                  <nuxt-link to="/usuario/50/favoritos">
                     <span>
                       <i class="fas fa-heart"></i>
                     </span>Favoritos*
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="./meuHistorico.html">
+                  <nuxt-link to="/usuario/50/historico">
                     <span>
                       <i class="fas fa-history"></i>
                     </span>Histórico*
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </div>
@@ -343,8 +345,7 @@ export default {
       console.log(this.pwHidde);
     }
   },
-  updated: function() {
-  }
+  updated: function() {}
 };
 </script>
 

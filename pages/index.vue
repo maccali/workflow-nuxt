@@ -21,17 +21,24 @@
 </template>
 
 <script>
-import Header from "~/components/header/Header.vue";
-import NavBar from "~/components/navbar/NavBar.vue";
-import CarrouselCont from "~/components/carrousel/CarrouselCont.vue";
-import Footer from "~/components/footer/Footer.vue";
-
+import Header from "~/components/header/Header";
+import NavBar from "~/components/navbar/NavBar";
+import CarrouselCont from "~/components/carrousel/CarrouselCont";
+import Footer from "~/components/footer/Footer";
 import ImgTexto from "~/components/presentations/ImgTexto";
 import TextoImg from "~/components/presentations/TextoImg";
-
 import Spacer from "~/components/utils/Spacer";
 
 export default {
+  head () {
+    return {
+      title: "PluShare - Institucional",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'Institucional', name: 'Institucional', content: 'My custom description' }
+      ]
+    }
+  },
   components: {
     Header,
     NavBar,
@@ -70,10 +77,6 @@ export default {
         { link: "https://picsum.photos/200/355" }
       ]
     };
-  }
+  },
 };
 </script>
-
-
-<style>
-</style>
