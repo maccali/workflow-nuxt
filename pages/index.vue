@@ -48,6 +48,7 @@ export default {
     Footer,
     Spacer
   },
+  middleware: 'authenticated',
   data() {
     return {
       quemSomos: {

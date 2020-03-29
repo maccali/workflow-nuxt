@@ -47,7 +47,7 @@ export default {
     Footer,
     CardProjeto
   },
-
+  middleware: "authenticated",
   data() {
     return {
       dados: [
@@ -106,18 +106,18 @@ export default {
   },
   mounted() {
     var macyProjetos = Macy({
-      container: '#macy-container-projetos',
+      container: "#macy-container-projetos",
       trueOrder: false,
       waitForImages: false,
       margin: 24,
       columns: 4,
       breakAt: {
-        940: 1,
+        940: 1
       }
     });
     //
-    console.log('parametros')
-    console.log(this.$route.query )
+    console.log("parametros");
+    console.log(this.$route.query);
   },
   methods: {
     atualizarMacy: () => {

@@ -1,11 +1,11 @@
 <template>
-  <div>
-    USUARIO perfil
-  </div>
+  <div>USUARIO perfil</div>
 </template>
 
 <script>
-
+export default {
+  middleware: "authenticated"
+};
 </script>
 
 

@@ -10,14 +10,14 @@
             <button
               class="btn btn-icon-menu principal"
               type="button"
-              v-on:click="abreAbaMenu('pesquisa')"
+              v-on:click="$store.commit('abreAbaMenu','pesquisa')"
             >
               <i class="fas fa-search"></i>
             </button>
             <button
               class="btn btn-icon-menu principal"
               type="button"
-              v-on:click="abreAbaMenu('usuario')"
+              v-on:click="$store.commit('abreAbaMenu','usuario')"
             >
               <i class="fas fa-user"></i>
             </button>
@@ -25,21 +25,16 @@
             <button
               class="btn btn-texto-menu"
               type="button"
-              v-on:click="abreAbaMenu('login')"
+              v-on:click="$store.commit('abreAbaMenu','login')"
             >Entrar</button>
           </div>
         </nav>
       </div>
-      <div class="cesar-menut" :class="aberto ? 'ativado' : ''">
+      <div class="cesar-menut" :class="$store.state.navbar.aberto ? 'ativado' : ''">
         <div class="fabinho">
           <div>
-            <div v-if="pageId === 'pesquisa'">
-              <div class="menu-header">
-                <span class="aba-titulo">Pesquisa</span>
-                <button class="btn btn-icon-menu" type="button" v-on:click="manipulaMenu('login')">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+            <div v-if="$store.state.navbar.pageId === 'pesquisa'">
+              <SideBarHeader :titulo="`Pesquisa`"></SideBarHeader>
 
               <!-- MANDAR PARA RODA DE PESQUISA -->
               <!-- METHOD GET -->
@@ -67,13 +62,9 @@
             </div>
           </div>
           <div>
-            <div v-if="pageId === 'login'">
-              <div class="menu-header">
-                <span class="aba-titulo">Entre</span>
-                <button class="btn btn-icon-menu" type="button" v-on:click="manipulaMenu('login')">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+            <div v-if="$store.state.navbar.pageId === 'login'">
+              <SideBarHeader :titulo="`Entre`"></SideBarHeader>
+
               <!-- MANDAR PARA RODA DE LOGADO -->
               <!-- METHOD POST -->
               <form method="POST">
@@ -133,13 +124,9 @@
             </div>
           </div>
           <div>
-            <div v-if="pageId === 'cadastro'">
-              <div class="menu-header">
-                <span class="aba-titulo">Cadastre-se</span>
-                <button class="btn btn-icon-menu" type="button" v-on:click="manipulaMenu('login')">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+            <div v-if="$store.state.navbar.pageId === 'cadastro'">
+              <SideBarHeader :titulo="`Cadastre-se`"></SideBarHeader>
+
               <form method="POST">
                 <label for="input-cadastro-nome">Nome Completo</label>
                 <input
@@ -224,13 +211,9 @@
             </div>
           </div>
           <div>
-            <div v-if="pageId === 'recuperar'">
-              <div class="menu-header">
-                <span class="aba-titulo">Recupere</span>
-                <button class="btn btn-icon-menu" type="button" v-on:click="manipulaMenu('login')">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+            <div v-if="$store.state.navbar.pageId === 'recuperar'">
+              <SideBarHeader :titulo="`Recupere`"></SideBarHeader>
+
               <div class="content-menu-aside">
                 <p>Digite o seu e-mail no campo abaixo para podermos lhe enviar as próximas instruções</p>
               </div>
@@ -247,13 +230,8 @@
             </div>
           </div>
           <div>
-            <div v-if="pageId === 'usuario'">
-              <div class="menu-header">
-                <span class="aba-titulo">Sua Conta</span>
-                <button class="btn btn-icon-menu" type="button" v-on:click="manipulaMenu('login')">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+            <div v-if="$store.state.navbar.pageId === 'usuario'">
+              <SideBarHeader :titulo="`Sua Conta`"></SideBarHeader>
 
               <div class="card-person">
                 <img src="~/assets/img/bot.png" alt />
@@ -304,7 +282,22 @@
   </div>
 </template>
 <script>
+import SideBarHeader from "~/components/navbar/partials/SideBarHeader";
+import Cadastro from "~/components/navbar/partials/Cadastro";
+import Login from "~/components/navbar/partials/Login";
+import Pesquisa from "~/components/navbar/partials/Pesquisa";
+import Redefinir from "~/components/navbar/partials/Redefinir";
+import Usuario from "~/components/navbar/partials/Usuario";
+
 export default {
+  components: {
+    SideBarHeader,
+    Cadastro,
+    Login,
+    Pesquisa,
+    Redefinir,
+    Usuario
+  },
   data() {
     return {
       // Variáveis do menu
@@ -331,21 +324,18 @@ export default {
   },
 
   methods: {
-    manipulaMenu() {
-      this.aberto = !this.aberto;
-    },
-    abreAbaMenu(idAba) {
-      if (!this.aberto) {
-        this.manipulaMenu();
-      }
-      this.pageId = idAba;
-    },
     pwChange() {
       this.pwHidde = !this.pwHidde;
       console.log(this.pwHidde);
     }
   },
-  updated: function() {}
+  updated: function() {
+    console.log('---')
+    console.log(this.$store.state.usuario.token)
+  },
+  mounted: function(){
+    console.log(this.$store.state.navbar.aberto )
+  }
 };
 </script>
 
