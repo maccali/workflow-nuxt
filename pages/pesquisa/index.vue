@@ -116,11 +116,17 @@ export default {
       }
     });
     //
-    console.log("parametros");
-    console.log(this.$route.query);
+    // console.log("parametros");
+    // console.log(this.$route.query);
+    console.log("--client cook");
+    console.log(this.$cookies.get("token"));
+    this.$cookies.set("token", "cookie-value-client", {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7
+    });
   },
   methods: {
-    atualizarMacy: () => {
+    atualizarMacy(){
       // var macyProjetos = Macy({
       //   container: '#macy-container-projetos',
       //   trueOrder: false,
@@ -131,6 +137,8 @@ export default {
       //     940: 1,
       //   }
       // });
+      console.log(this.$store.app)
+      // api.http();
     }
   }
 };

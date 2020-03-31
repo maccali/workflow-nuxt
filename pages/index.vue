@@ -28,29 +28,30 @@ import Footer from "~/components/footer/Footer";
 import ImgTexto from "~/components/presentations/ImgTexto";
 import TextoImg from "~/components/presentations/TextoImg";
 import Spacer from "~/components/utils/Spacer";
+import axios from "axios";
 
 export default {
-  head () {
+  head() {
     return {
       title: "PluShare - Institucional",
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'Institucional', name: 'Institucional', content: 'My custom description' }
+        {
+          hid: "Institucional",
+          name: "Institucional",
+          content: "My custom description"
+        }
       ]
-    }
+    };
   },
-  components: {
-    Header,
-    NavBar,
-    CarrouselCont,
-    ImgTexto,
-    TextoImg,
-    Footer,
-    Spacer
-  },
-  middleware: 'authenticated',
   data() {
     return {
+      // api: {
+      //   metodo: "get",
+      //   url: `${baseUrl}${rotaApi}`,
+      //   data: {}
+      // },
+      dados: {},
       quemSomos: {
         titulo: "Quem Somos?",
         texto:
@@ -79,5 +80,38 @@ export default {
       ]
     };
   },
+  asyncData() {
+    console.log("estou no async")
+    // console.log(Vue);
+    await  axios({
+      method: "get",
+      // url: `${api.baseUrl}${api.rotaApi}`,
+      url: "https://api.nasa.gov/planetary/apod?api_key=8g23BupBSJXtE86RIMPOYki0ele3dSRvoshr5yLM",
+      data: {}
+    })
+      .then(function (response) {
+        return response;
+      }).catch(error => {
+        return error;
+      }).then(response => {
+        return response;
+      });
+    // dados= datasa;
+  },
+  components: {
+    Header,
+    NavBar,
+    CarrouselCont,
+    ImgTexto,
+    TextoImg,
+    Footer,
+    Spacer
+  },
+  middleware: "authenticated",
+  mounted() {
+    console.log("DADOS")
+    console.log(dados);
+  },
+
 };
 </script>

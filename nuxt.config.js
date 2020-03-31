@@ -32,8 +32,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/owl.js', mode: 'client'}, // Only works on client side
-    {src: '~/plugins/final.js', mode: 'client'} // Only works on client side
+    { src: '~/plugins/functions/api.js'},
+    { src: '~/plugins/owl.js', mode: 'client' }, // Only works on client side
+    { src: '~/plugins/final.js', mode: 'client' } // Only works on client side
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,7 +45,19 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'cookie-universal-nuxt',
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+
+  // proxy: {
+  //   '/api/': { target: 'https://api.nasa.gov', pathRewrite: {'^/api/': ''} },
+
+  //   '/api2/': 'http://api.another-website.com'
+  // },
   /*
   ** Build configuration
   */
@@ -52,7 +65,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }
